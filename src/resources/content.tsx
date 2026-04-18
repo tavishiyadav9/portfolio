@@ -5,11 +5,10 @@ const person: Person = {
   firstName: "Tavishi",
   lastName: "Yadav",
   name: "Tavishi Yadav",
-  role: "Product Manager",
+  role: "Product manager in progress",
   avatar: "/headshot.jpg",
   email: "tavishiyadav.pro@gmail.com",
   location: "America/New_York",
-  languages: ["English", "Hindi"],
 };
 
 const newsletter: Newsletter = {
