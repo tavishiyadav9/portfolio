@@ -1,9 +1,11 @@
 import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
+import { CopyEmailButton } from "./CopyEmailButton";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const linkedIn = social.find((item) => item.name === "LinkedIn");
 
   return (
     <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
@@ -30,20 +32,20 @@ export const Footer = () => {
             <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
           </Text>
         </Text>
-        <Row gap="16">
-          {social.map(
-            (item) =>
-              item.link && (
-                <IconButton
-                  key={item.name}
-                  href={item.link}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="s"
-                  variant="ghost"
-                />
-              ),
+        <Row gap="12" wrap horizontal="center" vertical="center">
+          {linkedIn?.link && (
+            <IconButton
+              href={linkedIn.link}
+              icon="linkedin"
+              tooltip="LinkedIn"
+              size="s"
+              variant="ghost"
+            />
           )}
+          <Row gap="8" vertical="center" className={styles.contactRow}>
+            <SmartLink href={`mailto:${person.email}`}>{person.email}</SmartLink>
+            <CopyEmailButton email={person.email} />
+          </Row>
         </Row>
       </Row>
       <Row height="80" hide s={{ hide: false }} />

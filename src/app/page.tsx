@@ -15,6 +15,7 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { InternshipBanner } from "@/components";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -43,6 +44,7 @@ export default function Home() {
         }}
       />
       <Column fillWidth horizontal="center" gap="m">
+        <InternshipBanner />
         <Column maxWidth="s" horizontal="center" align="center">
           {home.featured.display && (
             <RevealFx
@@ -94,7 +96,7 @@ export default function Home() {
                     size="m"
                   />
                 )}
-                {about.title}
+                {about.label}
               </Row>
             </Button>
           </RevealFx>
