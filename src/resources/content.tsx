@@ -2,48 +2,26 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Tavishi",
+  lastName: "Yadav",
+  name: "Tavishi Yadav",
+  role: "Product manager in progress",
+  avatar: "/headshot.jpg",
+  email: "tavishiyadav.pro@gmail.com",
+  location: "America/New_York",
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Thoughts on product, AI systems, and operator-built tooling.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://linkedin.com/in/tavishiyadav",
     essential: true,
   },
   {
@@ -56,28 +34,29 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/og.png",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: "Tavishi Yadav — Product Manager",
+  description:
+    "Cornell M.Eng student, ex-Freshworks engineer. Building AI-powered product tools. Seeking Summer 2026 PM / APM / TPM internships.",
+  headline: <>Product manager in progress.</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong>Automated Job Application Pipeline</strong>
         <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
+        <Text onBackground="brand-medium">Flagship project</Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/automated-job-application-pipeline",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Cornell M.Eng student, ex-Freshworks engineer, 4.5 years of production SaaS
+      experience. Building AI tools while I job hunt. Seeking PM / APM / TPM internships
+      for Summer 2026.
+    </>
   ),
 };
 
@@ -85,7 +64,8 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description:
+    "Freshworks engineer turned Cornell M.Eng student building toward product management in AI, SaaS, and B2B.",
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,60 +74,83 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "About",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        <Text as="p" variant="body-default-l">
+          I spent 4.5 years at Freshworks as a Software Engineer — Test, embedded in the
+          Freshservice product team. As a Senior Engineer, I led a 9-person cross-functional
+          group delivering Contextual Collaboration and DevOps Change Management features to
+          200+ enterprise customers — work that accelerated customer issue resolution by 40%.
+          I also rebuilt our automated test infrastructure, cutting regression time from 3
+          days to 4 hours.
+        </Text>
+        <Text as="p" variant="body-default-l">
+          Working with product managers on 15+ feature launches, I kept gravitating toward
+          the questions they owned: why we were building something, who it was for, how we'd
+          measure success. The engineering work felt well-scoped; the product work felt like
+          where the hard, interesting problems lived. So I made the leap.
+        </Text>
+        <Text as="p" variant="body-default-l">
+          I'm now at Cornell, pursuing an M.Eng in Engineering Management (GPA 3.96,
+          graduating Dec 2026), with coursework spanning product management, AI systems, and
+          applied analytics. Outside class, I build: an Agentic AI Healthcare Agent with
+          Cornell Johnson DTI for Oracle, and a job application pipeline that automates
+          discovery, scoring, and packet generation — the same system that surfaced this
+          role.
+        </Text>
+        <Text as="p" variant="body-default-l">
+          I'm looking for Summer 2026 PM, APM, or TPM internships where engineering depth
+          meets product thinking — ideally at AI/SaaS/B2B companies at Series A–C stage.
+          Authorized to work in the US with sponsorship.
+        </Text>
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Freshworks",
+        timeframe: "2020 - 2025",
+        role: "Senior Software Engineer — Test, Freshservice",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led a 9-person cross-functional group delivering Contextual Collaboration and
+            DevOps Change Management features to 200+ enterprise customers.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Shipped product work that accelerated customer issue resolution by 40%.
+          </>,
+          <>
+            Rebuilt the automated test infrastructure and cut regression time from 3 days to
+            4 hours.
+          </>,
+          <>
+            Partnered with product managers across 15+ feature launches and developed the
+            product instincts that prompted the shift from engineering to PM.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Cornell Johnson DTI × Oracle",
+        timeframe: "2026",
+        role: "AI Technical Lead",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Leading the technical architecture for an agentic AI healthcare-adjacent system
+            built through Cornell's Digital Technology Immersion program.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Translating product requirements into agent design, tool specifications, and
+            knowledge-base decisions with OCI Generative AI as the deployment surface.
           </>,
         ],
         images: [],
@@ -155,78 +158,53 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Cornell University",
+        description: (
+          <>
+            M.Eng in Engineering Management, GPA 3.96, graduating December 2026. Coursework
+            spans product management, AI systems, and applied analytics.
+          </>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Focus Areas",
     skills: [
       {
-        title: "Figma",
+        title: "Product + AI Systems",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Building AI-powered workflows with a product lens, from problem framing and
+            scoring logic to grounded generation and operator-facing tooling.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Product Strategy" },
+          { name: "Agentic AI" },
+          { name: "B2B SaaS" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Technical Depth",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Comfortable moving between engineering detail and product judgment across
+            automation pipelines, analytics, and enterprise systems.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Python" },
+          { name: "Analytics" },
+          { name: "Systems Thinking" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
@@ -235,70 +213,23 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Writing",
+  description: `Writing on product, AI systems, and lessons from building as ${person.name}.`,
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  title: "Projects",
+  description: `Selected product, strategy, and AI systems work by ${person.name}.`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  title: `Gallery – ${person.name}`,
+  description: `Gallery by ${person.name}`,
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };

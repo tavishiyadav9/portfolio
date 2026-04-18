@@ -1,0 +1,35 @@
+---
+title: "Automated Job Application Pipeline"
+subtitle: "Automated PM internship discovery, scoring, and application generation."
+publishedAt: "2026-04-18"
+summary: "A seven-week solo build that automates PM internship discovery, scoring, packet generation, and daily operator workflow."
+link: "Available on request — happy to share the repo or walk through it in an interview."
+---
+
+## Subtitle
+
+Automated PM internship discovery, scoring, and application generation.
+
+## Problem
+
+PM internship search burns hours a day — scanning dozens of sources for relevant roles, tailoring packets per application, tracking status across a hundred tabs. Manual, error-prone, and exactly the kind of workflow AI should handle.
+
+## Role
+
+Designed and built the full system solo — discovery, scoring, packet generation, email delivery, and the operator web app — over seven weeks.
+
+## Approach
+
+Python pipeline running 3× daily on GitHub Actions. Four ingest sources (Simplify, Jobright, Greenhouse, LinkedIn via JSearch/RapidAPI) normalized into a common schema. Rule-based scorer with visa/seniority pre-filters, then dimension scoring across role fit, skills match, AI domain, freshness, and competition tier. Notion as the operational database. Claude Haiku for application packet generation (cover letter + resume customization + outreach) with strict hallucination guardrails grounded in a candidate knowledge base. ATS-friendly .docx resumes via docx-js, uploaded to Google Drive via OAuth2. HTML email digest with one-click apply buttons, follow-up scheduling at 14 days, Gmail inbox classification via IMAP. Plus a local Flask web app with eight tabs for manual intake, networking, LinkedIn coaching, and interview prep.
+
+## Outcome
+
+440 passing tests. ~400 roles discovered per run, ~3–5 high-signal matches surfaced daily. Zero manual board-scanning. Cost: ~$2/month in API spend after the build phase.
+
+## Stack
+
+Python, GitHub Actions, Notion API, Claude Haiku, Flask, JSearch, SerpAPI, Exa.ai, Google Drive OAuth2, docx-js, Gmail IMAP
+
+## Link
+
+Available on request — happy to share the repo or walk through it in an interview.

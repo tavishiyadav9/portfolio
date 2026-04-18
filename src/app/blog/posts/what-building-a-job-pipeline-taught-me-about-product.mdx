@@ -1,0 +1,17 @@
+---
+title: "What building a job pipeline taught me about product"
+subtitle: "What seven weeks of building for myself clarified about scope, signal, and trust."
+publishedAt: "2026-04-18"
+summary: "A short reflection on what an AI-powered internship pipeline taught me about product judgment."
+tag: "Product"
+---
+
+I set out to automate my own internship search and ended up shipping a seven-week project: a Python pipeline that discovers around 400 PM/APM/TPM roles a day, scores them, generates tailored application packets, and emails me the three or four worth reviewing. The engineering was straightforward. The product decisions were harder.
+
+The first hard call was scope. My instinct was to build the full dream system — sourcing, scoring, packet generation, Gmail inbox classification, a web app with eight tabs. Every version of "ship a working discovery loop first, add the rest later" felt like giving up. So I built everything. It took twice as long, and most of the sophistication is still barely used. A PM would have killed the web app in sprint one.
+
+The second was signal vs noise. My first scorer weighted every job 50/100 — useless. The fix wasn't a fancier model; it was rules: pre-filter anything mentioning "no sponsorship," "senior," or "director"; weight fresh postings higher; weight AI/SaaS companies higher. Rule-based scoring is boring, but it works and it's debuggable. LLMs are better for writing than for judgment.
+
+The third was honesty. I built strict guardrails to stop Claude from inventing resume bullets that weren't grounded in my actual experience. I watched it hallucinate "clinical trial experience" once. Trust in any AI system lives or dies on this. Users forgive slow; they don't forgive made up.
+
+None of this is novel. Every PM knows: scope tight, measure signal, don't lie. But there's a real difference between knowing it and learning it by shipping and using the thing yourself. That's the useful part.

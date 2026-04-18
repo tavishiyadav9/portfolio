@@ -93,20 +93,13 @@ export default function About() {
             flex={3}
             horizontal="center"
           >
-            <Avatar src={person.avatar} size="xl" />
-            <Row gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
+            <Avatar src={person.avatar} size="l" />
+            <Column gap="4" horizontal="center" align="center">
+              <Text variant="heading-strong-m">{person.name}</Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                {person.role}
+              </Text>
+            </Column>
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
